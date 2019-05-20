@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> ans;
+        map<int, int> myMap;
+        for (int i = 0; i < nums.size();  i++){
+            if (myMap.find(target - nums[i])!= myMap.end()){
+                ans.push_back(myMap[target-nums[i]]);
+                ans.push_back(i);
+                return  ans;
+            }
+            
+            myMap[nums[i]] = i;
+            
+        }
+        return ans;
+  
+    }
+};
